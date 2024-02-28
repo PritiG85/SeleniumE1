@@ -12,11 +12,12 @@ public class ToHandleNotificationPopupReobotClass {
 
 	public static void main(String[] args) throws InterruptedException, AWTException {
 
-		WebDriver driver = new ChromeDriver();//
+		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(14));
 		driver.get("https://www.easemytrip.com/");
 		Thread.sleep(2000);
+		
 		Robot robot = new Robot();
 		robot.keyPress(KeyEvent.VK_TAB);
 		robot.keyRelease(KeyEvent.VK_TAB);
