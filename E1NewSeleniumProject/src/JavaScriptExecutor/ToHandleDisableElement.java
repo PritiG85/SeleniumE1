@@ -17,16 +17,17 @@ public class ToHandleDisableElement {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		driver.get("https://demoapps.qspiders.com/ui?scenario=1");// to launch web Application
 		Thread.sleep(2000);
-		WebElement disableTextBox = driver.findElement(By.id("name"));
-		driver.findElement(By.xpath("//li[text()='Disabled']")).click();
+		
+		driver.findElement(By.xpath("//li[text()='Disabled']")).click();//for click o disable option
 		Thread.sleep(2000);
+	WebElement disableTextBox = driver.findElement(By.id("name"));//to find the webElement
 		
 		JavascriptExecutor js =(JavascriptExecutor) driver;//To perform type Casting
 		js.executeScript("document.getElementById('name').value='admin'");// send value to disable element by using java script 
 		
 		//js.executeScript("document.getElementById('name').value=''");//To clear the content from a disable element
 		Thread.sleep(2000);
-		js.executeScript("arguments[0].value=''",disableTextBox);
+		js.executeScript("arguments[0].value=''",disableTextBox);//to clear the text 
 	}
 
 }

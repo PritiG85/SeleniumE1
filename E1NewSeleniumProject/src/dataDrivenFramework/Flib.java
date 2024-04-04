@@ -1,6 +1,7 @@
 package dataDrivenFramework;
 
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 import org.apache.poi.EncryptedDocumentException;
@@ -21,7 +22,25 @@ public class Flib {
 		Cell cell = row.getCell(cellNo);
 		String data = cell.getStringCellValue();
 		return data;
-		
-	}
 	
+}
+	public int  getRowCount(String excelPath,String sheetName) throws EncryptedDocumentException, IOException
+	{
+		FileInputStream fis = new FileInputStream(excelPath);
+		Workbook wb = WorkbookFactory.create(fis);
+		Sheet sheet = wb.getSheet(sheetName);
+		int rc = sheet.getLastRowNum();
+		return rc;	
+	}
+	public void writeExcelData(String excelPath,String sheetName,int rowNo,int cellNo) throws EncryptedDocumentException, IOException
+	{
+		FileInputStream fis = new FileInputStream(excelPath);
+		Workbook wb = WorkbookFactory.create(fis);
+		Sheet sheet = wb.getSheet(sheetName);
+		Row row = sheet.getRow(rowNo);
+		Cell cell = row.getCell(cellNo);
+		String data = cell.getStringCellValue();
+
+	}
+
 }
