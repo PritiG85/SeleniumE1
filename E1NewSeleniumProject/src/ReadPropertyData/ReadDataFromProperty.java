@@ -12,7 +12,6 @@ public class ReadDataFromProperty {
 		prop.load(fis);
 		String data = prop.getProperty("username");
 		System.out.println(data);
-
 	}
 	
 }
