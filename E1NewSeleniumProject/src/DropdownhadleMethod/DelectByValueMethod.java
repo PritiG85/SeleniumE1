@@ -17,6 +17,9 @@ public class DelectByValueMethod {
 	 sel.selectByValue("v5");
 	 Thread.sleep(2000);
 	 sel.deselectByValue("v5");
+	 
+	 
+	 
 
 	}
 

@@ -11,6 +11,7 @@ import org.openqa.selenium.safari.SafariDriver;
 public class BaseTest extends Flib implements IAutoContsant {
 	
 	public static WebDriver driver;
+	
 	public void setUp() throws IOException {
 		
 		Flib flib = new Flib();
